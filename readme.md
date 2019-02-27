@@ -11,16 +11,16 @@
 
 ## 目录约定
 
-|--bin
-   |--www              -- 可执行文件
-|--public              -- 放置静态文件  
-   |--.tmp             -- 临时文件夹
-   |--bisys            -- 放置bi_admin项目静态页面(不做任何操作,为测试或线上环境部署预留)
-   |--inspector        -- 放置inspector项目静态页面(不做任何操作,为测试或线上环境部署预留)
-|--src                 -- 项目核心代码
-   |-- proxy           -- 接口转发模块 
-   |-- routes          --node内部api模块
-|--app.js              -- 项目的入口文件
+--bin
+   --www              -- 可执行文件
+--public              -- 放置静态文件  
+   --.tmp             -- 临时文件夹
+   --bisys            -- 放置bi_admin项目静态页面(不做任何操作,为测试或线上环境部署预留,git已忽略)
+   --inspector        -- 放置inspector项目静态页面(不做任何操作,为测试或线上环境部署预留,git已忽略)
+--src                 -- 项目核心代码
+   -- proxy           -- 接口转发模块 
+   -- routes          --node内部api模块
+--app.js              -- 项目的入口文件
 
 
 ## 使用
