@@ -4,8 +4,10 @@
 * node 
 * express  api模块
 * http-proxy-middleware 中间件用于java接口转发
+* connect-history-api-fallback 中间件用于处理静态页面使用history模式
 * dva 目前是纯粹的数据流，和 umi 以及 roadhog 之间并没有相互的依赖关系，可以分开使用也可以一起使用
 * 服务器使用pm2作为进程守护
+* 
 
 ## 目录约定
 

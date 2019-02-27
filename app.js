@@ -4,6 +4,7 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var proxy = require('http-proxy-middleware');
+var history = require('connect-history-api-fallback');
 // 用于格式化输出日志
 var logger = require('morgan');
 var proxyConfig=require('./src/proxy/index');
@@ -22,15 +23,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-
-// // 允许设置跨域访问
-app.all('*', function (req, res, next) {
-  res.header('Access-Control-Allow-Origin', '*');
-  res.header('Access-Control-Allow-Headers', 'Content-Type');
-  res.header('Access-Control-Allow-Methods', '*');
-  res.header('Content-Type', 'application/json;charset=utf-8');
-  next();
-});
+// 测试接口
 app.get('/api',(req,res)=>{
     res.cookie('testName', 'testValue');
     return res.json({code:11122});
@@ -38,6 +31,11 @@ app.get('/api',(req,res)=>{
 
 // 设置代理接口
 app.use('/proxy',proxy(proxyConfig));
+// 设置静态页面的history模式
+app.use(history());
+app.get("/inspector", function(req, res) {
+  res.sendFile(path.join(__dirname, "public/inspector/index.html"))
+})
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
