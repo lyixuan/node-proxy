@@ -1,0 +1,10 @@
+# dependencies
+/node_modules
+
+# misc
+.DS_Store
+package-lock.json
+
+# 预留public下两个文件夹不能使用此名
+/public/bisys
+/public/inspector
