@@ -1,7 +1,7 @@
 const proxyHostObj = {
     // production: 'http://bd.ministudy.com/apis',
     production: 'http://172.16.225.6:8085/apis',
-    development: 'http://172.16.117.65:8090',
+    development: 'http://172.16.117.65:8085',
 }
 var restream = function (proxyReq, req, res, options) {  // 在代理中将body中的参数序列化一下,否则将发送解析后的参数
     if (req.body) {
@@ -11,6 +11,7 @@ var restream = function (proxyReq, req, res, options) {  // 在代理中将body�
         proxyReq.write(bodyData);
     }
 }
+
 const proxyConfig = {
     target: proxyHostObj[process.env.NODE_ENV],  // target host
     changeOrigin: true,               // needed for virtual hosted sites
