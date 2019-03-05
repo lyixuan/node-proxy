@@ -25,7 +25,7 @@
 ```
 ## 使用
 
-```bash
+```bash  开发环境下
 $ git clone [git地址]          //将项目clone至本地
 $ cd [项目目录]
 $ npm i
@@ -34,15 +34,27 @@ $ npm run start:pro     // 选用线上环境启动,env=production
 $ npm run test          // 选用测试环境启动,可免重启应用修改代码
 ```
 
-## 项目使用pm2作为项目的进程守护
+## 项目使用pm2作为项目的进程守护,部署防止
 
 ```bash
 $ sudo npm i pm2 -g      // 全局安装进程管理器
 $ cd [项目目录]
-$ pm2 start npm run start(start:pro,test) --name 'admin_app'   // 初次登录
-$ pm2 start admin_app    // pm2 list 中已有admin_app进程
+$  production:
+$ pm2 start config.pro.json   // 初次登录(production环境)
+$ pm2 restart admin_app    // pm2 list 中已有admin_app进程
 $ pm2 stop admin_app     // 关闭进程
 $ pm2 delete admin_app   // 删除进程
+
+$  development
+$ pm2 start config.dev.json   // 初次登录(production环境)
+$ pm2 restart admin_app   // pm2 list 中已有admin_app进程
+$ pm2 stop admin_app     // 关闭进程
+$ pm2 delete admin_app   // 删除进程
+
+
 $ pm2 list               // 可查看管理器中所以进程改
 ```
 ## 
+## 切换development与master环境  (暂定)
+分别使用config.pro.json     :production
+       config.dev.json    :development
