@@ -11,7 +11,6 @@ var debug = require('debug');
  * Get port from environment and store in Express.
  */
 var port = normalizePort(process.env.PORT || '8095');
-// 防止端口被占用,现将指定端口杀掉
 
 
 app.set('port', port);
