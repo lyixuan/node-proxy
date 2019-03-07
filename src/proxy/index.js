@@ -1,6 +1,6 @@
 const proxyHostObj = {
     // production: 'http://bd.ministudy.com/apis',
-    production: 'http://172.16.225.6:8085/apis',
+    production: 'http://api.bd.ministudy.com/apis',
     development: 'http://172.16.117.65:8085',
 }
 var restream = function (proxyReq, req, res, options) {  // 在代理中将body中的参数序列化一下,否则将发送解析后的参数
