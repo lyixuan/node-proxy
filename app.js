@@ -8,6 +8,7 @@ var history = require('connect-history-api-fallback');
 // 用于格式化输出日志
 var logger = require('morgan');
 var proxyConfig = require('./src/proxy/index');
+var oldApiConfig = require('./src/proxy/oldApi');
 
 
 
@@ -47,6 +48,7 @@ app.get('api/test', (req, res) => {
 
 // 设置代理接口
 app.use('/proxy', proxy(proxyConfig));
+app.use('/oldApi', proxy(oldApiConfig));
 
 // 设置静态页面的history模式,根目录为/inspector,
 app.use(history());
