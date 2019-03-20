@@ -9,6 +9,7 @@ var history = require('connect-history-api-fallback');
 var logger = require('morgan');
 var proxyConfig = require('./src/proxy/index');
 var oldApiConfig = require('./src/proxy/oldApi');
+var proxyQualityConfig = require('./src/proxy/quality');
 
 
 
@@ -48,7 +49,10 @@ app.get('api/test', (req, res) => {
 
 // 设置代理接口
 app.use('/proxy', proxy(proxyConfig));
+// 原始代理接口
 app.use('/oldApi', proxy(oldApiConfig));
+// 质检模块代理接口
+app.use('/proxyQuality', proxy(proxyQualityConfig));
 
 // 设置静态页面的history模式,根目录为/inspector,
 app.use(history());
