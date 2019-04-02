@@ -9,7 +9,7 @@ var history = require('connect-history-api-fallback');
 var logger = require('morgan');
 var proxyConfig = require('./src/proxy/index');
 var oldApiConfig = require('./src/proxy/oldApi');
-var tmpApiConfig = require('./src/proxy/oldApi');
+var tmpApiConfig = require('./src/proxy/tmpApi');
 
 
 
