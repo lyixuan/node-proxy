@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var proxy = require('http-proxy-middleware');
 var history = require('connect-history-api-fallback');
-var compression = require('compression')
+// var compression = require('compression')
 // 用于格式化输出日志
 var logger = require('morgan');
 var proxyConfig = require('./src/proxy/index');
@@ -56,7 +56,7 @@ app.use('/oldApi', proxy(oldApiConfig));
 app.use('/tmpApi', proxy(tmpApiConfig));
 
 // 使用gzip
-app.use(compression());
+// app.use(compression());
 // 设置静态页面的history模式,根目录为/inspector,
 app.use(history());
 app.use('/inspector', express.static(path.join(__dirname, 'inspector')))
