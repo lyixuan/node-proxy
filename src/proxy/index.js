@@ -12,7 +12,7 @@ var restream = function (proxyReq, req, res, options) {  // 在代理中将body�
         proxyReq.write(bodyData);
     }
 }
-
+console.log(proxyHostObj[process.env.NODE_ENV], 111111)
 const proxyConfig = {
     target: proxyHostObj[process.env.NODE_ENV],  // target host
     changeOrigin: true,               // needed for virtual hosted sites
