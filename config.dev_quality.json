@@ -1,0 +1,21 @@
+{
+    "name": "admin_app_quality",
+    "script": "./bin/www",
+    "cwd": "./",
+    "watch": [
+        "bin",
+        "routers"
+    ],
+    "ignore_watch": [
+        "node_modules",
+        "logs",
+        "public"
+    ],
+    "watch_options": {
+        "followSymlinks": false
+    },
+    "env": {
+        "NODE_ENV": "development_quality",
+        "PORT": 8097
+    }
+}

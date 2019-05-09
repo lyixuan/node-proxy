@@ -51,6 +51,12 @@ $ pm2 restart admin_app   // pm2 list 中已有admin_app进程
 $ pm2 stop admin_app     // 关闭进程
 $ pm2 delete admin_app   // 删除进程
 
+$  development_quality
+$ pm2 start config.dev_quality.json   // 初次登录(production环境)
+$ pm2 restart admin_app_quality   // pm2 list 中已有admin_app进程
+$ pm2 stop admin_app_quality     // 关闭进程
+$ pm2 delete admin_app_quality   // 删除进程
+
 
 $ pm2 list               // 可查看管理器中所以进程改
 ```
