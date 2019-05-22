@@ -1,6 +1,7 @@
 const proxyHostObj = {
     // production: 'http://bd.ministudy.com/apis',
     production: 'http://api.bd.ministudy.com/apis',
+  //development: 'http://172.16.117.65:8085',
     development: 'http://172.16.117.65:8086',
     development_quality: 'http://172.16.225.8:8086',
 }
