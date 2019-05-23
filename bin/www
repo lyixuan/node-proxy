@@ -10,9 +10,7 @@ var debug = require('debug');
 /**
  * Get port from environment and store in Express.
  */
-const p1 = '8096';  // 65
-const p2 = '8098';  // 64
-var port = normalizePort(process.env.PORT || p2);
+var port = normalizePort(process.env.PORT || '8096');
 
 
 app.set('port', port);

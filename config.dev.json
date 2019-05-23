@@ -16,6 +16,6 @@
     },
     "env": {
         "NODE_ENV": "development",
-        "PORT": 8098
+        "PORT": 8096
     }
 }
